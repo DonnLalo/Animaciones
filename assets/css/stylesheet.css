@@ -4,12 +4,149 @@
     box-sizing: border-box;
 }
 
-header {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: hidden;
+}
+
+nav {
+    width: 100%;
+    top: 90%;
+    position: fixed;
+    z-index: 99999;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a {
+    color: white;
+}
+
+main {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
     background-color: grey;
-    color: whitesmoke;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 100px;
+}
+
+#wellcomeSection {
+    animation: sectionWellcome 2s;
+}
+
+#wellcomeH1-1 {
+    animation: wellcomeMessage 2s;
+}
+
+#wellcomeH1-2 {
+    animation: wellcomeMessage 2s;
+}
+
+#ring>div {
+    position: absolute;
+}
+
+#colors {
+    width: 450px;
+    height: 450px;
+    background-image: linear-gradient(#de212e, #bc1fdb, #321fdb, #1fdbc8, #1fdb3b);
+    border-radius: 50%;
+    animation: rotate 1s linear infinite;
+    filter: blur(10px);
+}
+
+#static {
+    width: 400px;
+    height: 400px;
+    background-color: grey;
+    border-radius: 50%;
+}
+
+#goodbye h1 {
+    font-size: 100px;
+    position: absolute;
+}
+
+#gb1 {
+    animation: goodbye1 1s infinite;
+}
+
+#gb2 {
+    animation: goodbye2 2s infinite;
+}
+
+@keyframes sectionWellcome {
+    from {
+        background-color: transparent;
+        height: 0vh;
+    }
+    to {
+        background-color: grey;
+        height: 100vh;
+    }
+}
+
+@keyframes wellcomeMessage {
+    from {
+        color: transparent;
+        display: none;
+    }
+    to {
+        display: block;
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes goodbye1 {
+    from {
+        font-size: 0px;
+    }
+    to {
+        font-size: 100px;
+    }
+}
+
+@keyframes goodbye2 {
+    from {
+        font-size: 100px;
+        color: white;
+    }
+    to {
+        font-size: 500px;
+        color: transparent;
+    }
 }
